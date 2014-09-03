@@ -43,7 +43,7 @@ can.bindEventStream = function(ctx, ev, selector) {
     selector ?
       cb => can.undelegate.call(ctx, selector, ev, cb) :
       cb => can.unbind.call(ctx, ev, cb),
-    function() { return chooseEventData(ctx, arguments, ev); });
+    args => chooseEventData(ctx, args, ev));
   return stream;
 };
 can.eventStreamUntil = (stream, until) => stream.takeUntil(until);
