@@ -87,9 +87,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return can.undelegate.call(ctx, selector, ev, cb);
 	  }) : (function(cb) {
 	    return can.unbind.call(ctx, ev, cb);
-	  }), function() {
-	    return chooseEventData(ctx, arguments, ev);
-	  });
+	  }), (function(args) {
+	    return chooseEventData(ctx, args, ev);
+	  }));
 	  return stream;
 	};
 	can.eventStreamUntil = (function(stream, until) {
