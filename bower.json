@@ -1,0 +1,24 @@
+{
+  "name": "can.rx",
+  "version": "0.0.0",
+  "authors": [
+    "Kat Marchán <kzm@sykosomatic.org>"
+  ],
+  "description": "RxJS integration for CanJS",
+  "keywords": [
+    "rx",
+    "reactive-extensions",
+    "rxjs",
+    "frp",
+    "mvc",
+    "can",
+    "canjs",
+    "reactive"
+  ],
+  "license": "CC0",
+  "dependencies": {
+    "canjs": "~2.1.0",
+    "can.eventstream": "~0.1.0",
+    "rxjs": "~2.3.8"
+  }
+}
