@@ -38,13 +38,13 @@ Prebuilt releases are included in `dist`.
 
 ```javascript
 var compute = can.compute(),
-    property = compute.bind();
+    observable = compute.bind();
 
-property.log("Property has new value:");
+observable.subscribe(function(x) { console.log("Value changed: ", x); });
 
 compute(1);
 
-property.toCanCompute().bind("change", function() {
+observable.toCanCompute().bind("change", function() {
   console.log("compute updated from property change.");
 });
 
