@@ -44,7 +44,7 @@ observable.subscribe(function(x) { console.log("Value changed: ", x); });
 
 compute(1);
 
-observable.toCanCompute().bind("change", function() {
+observable.toCompute().bind("change", function() {
   console.log("compute updated from property change.");
 });
 
@@ -60,23 +60,23 @@ For the most part, `can.rx` is a straightforward implementation of the
 `can.rx` also extends `Rx.Observable.prototype` with a few utility methods
 that directly wrap `can.eventstream` functions, documented below.
 
-### `Rx.Observable#toCanCompute([compute=can.compute()])`
+### `Rx.Observable#toCompute([compute=can.compute()])`
 
 Wraps `can.bindComputeFromStream`.
 
-`stream.toCanCompute(compute)` is the same as `can.bindComputeFromStream(stream,
+`stream.toCompute(compute)` is the same as `can.bindComputeFromStream(stream,
 compute);`
 
-### `Rx.Observable#toCanMap([map=new can.Map()])`
+### `Rx.Observable#toMap([map=new can.Map()])`
 
 Wraps `can.bindMapFromStream`.
 
-`stream.toCanMap(compute)` is the same as `can.bindMapFromStream(stream,
+`stream.toMap(compute)` is the same as `can.bindMapFromStream(stream,
 compute);`
 
-### `Rx.Observable#toCanList([list=new can.List()])`
+### `Rx.Observable#toList([list=new can.List()])`
 
 Wraps `can.bindListFromStream`.
 
-`stream.toCanList(compute)` is the same as `can.bindListFromStream(stream,
+`stream.toList(compute)` is the same as `can.bindListFromStream(stream,
 compute);`
