@@ -32,9 +32,10 @@ rx.Observable.prototype.toList = function(list=new can.List()) {
   return can.bindListFromStream(this, list);
 };
 
-can.isEventStream = (stream) => stream instanceof rx.Observable;
-can.onEventStreamValue = (stream, callback) => stream.subscribe(callback);
-can.bindEventStream = function(ctx, ev, selector) {
+can.EventStream = {};
+can.EventStream.isEventStream = (stream) => stream instanceof rx.Observable;
+can.EventStream.onValue = (stream, callback) => stream.subscribe(callback);
+can.EventStream.bind = function(ctx, ev, selector) {
   ev = ev == null ? "change" : ev;
   var stream = rx.Observable.fromEventPattern(
     selector ?
@@ -46,7 +47,7 @@ can.bindEventStream = function(ctx, ev, selector) {
     args => chooseEventData(ctx, args, ev));
   return stream;
 };
-can.eventStreamUntil = (stream, until) => stream.takeUntil(until);
+can.EventStream.untilStream = (stream, until) => stream.takeUntil(until);
 
 function chooseEventData(ctx, eventArgs, evName) {
   if (ctx.isComputed) {
