@@ -18,7 +18,7 @@
   "license": "CC0",
   "dependencies": {
     "canjs": "~2.1.0",
-    "can.eventstream": "~0.1.0",
+    "can.eventstream": "~0.2.0",
     "rxjs": "~2.3.8"
   }
 }

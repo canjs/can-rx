@@ -27,7 +27,7 @@
   "homepage": "https://github.com/zkat/can.rx",
   "dependencies": {
     "canjs": "~2",
-    "can.eventstream": "^0.1.0",
+    "can.eventstream": "^0.2.0",
     "rx": "^2.3.8"
   },
   "devDependencies": {
