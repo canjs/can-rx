@@ -1,6 +1,6 @@
 {
   "name": "can.rx",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "RxJS integration for CanJS",
   "main": "index.js",
   "scripts": {
