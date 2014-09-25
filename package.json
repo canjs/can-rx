@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/zkat/can.rx"
+    "url": "git://github.com/bitovi/can.rx"
   },
   "keywords": [
     "rx",
@@ -22,9 +22,9 @@
   "author": "Kat Marchán <kzm@sykosomatic.org>",
   "license": "CC0",
   "bugs": {
-    "url": "https://github.com/zkat/can.rx/issues"
+    "url": "https://github.com/bitovi/can.rx/issues"
   },
-  "homepage": "https://github.com/zkat/can.rx",
+  "homepage": "https://github.com/bitovi/can.rx",
   "dependencies": {
     "canjs": "~2",
     "can.eventstream": "^0.2.0",
