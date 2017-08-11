@@ -1,82 +1,28 @@
 # can.rx
 
-`can.rx` is a [CanJS](https://github.com/bitovi/canjs) plugin that lets you
+[![Join the chat at https://gitter.im/canjs/canjs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/canjs/canjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/canjs/can.rx/blob/master/LICENSE.md)
+[![npm version](https://badge.fury.io/js/can.rx.svg)](https://www.npmjs.com/package/can.rx)
+[![Travis build status](https://travis-ci.org/canjs/can.rx.svg?branch=master)](https://travis-ci.org/canjs/can.rx)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/canjs/can.rx?branch=master&svg=true)](https://ci.appveyor.com/project/matthewp/can.rx)
+[![Coverage status](https://coveralls.io/repos/github/canjs/can.rx/badge.svg?branch=master)](https://coveralls.io/github/canjs/can.rx?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can.rx.svg)](https://greenkeeper.io/)
+
 create [RxJS](https://github.com/Reactive-Extensions/RxJS) `Observable`s from
-`CanJS` event handlers, as well as feed `Observable` streams back into `CanJS`
-observables. The result is a delicious, canned-bacon-flavored mix of
-[FRP](https://en.wikipedia.org/wiki/Functional_reactive_programming) and
-`CanJS`-style declarative MVC.
 
-`can.rx` implements the
-[can.eventstream](https://github.com/zkat/can.eventstream) interface and
-adds a few methods to `RxJS` objects (documented below). For information on the
-`CanJS` side of the interface, please refer to `can.eventstream`'s
-documentation.
+## Documentation
 
-Check out `dist/sandbox.html` and `dist/sandbox.js` for some rough usage
-examples, including a fairly short drag-and-drop demo using `can.Component`, and
-super-simple, single-line two-way binding between pairs of computes and pairs of
-`can.Map`s.
+Read the [API docs on CanJS.com](https://canjs.com/doc/can.rx.html).
 
-`can.rx` is
-[hosted at Github](http://github.com/zkat/can.rx). `can.rx` is a
-public domain work, dedicated using
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Feel free to do
-whatever you want with it.
+## Changelog
 
-# Quickstart
+See the [latest releases on GitHub](https://github.com/canjs/can.rx/releases).
 
-### Install
+## Contributing
 
-`$ npm install can.rx`
-or
-`$ bower install can.rx`
+The [contribution guide](https://github.com/canjs/can.rx/blob/master/CONTRIBUTING.md) has information on getting help, reporting bugs, developing locally, and more.
 
-Prebuilt releases are included in `dist`.
+## License
 
-### Example
+[MIT](https://github.com/canjs/can.rx/blob/master/LICENSE.md)
 
-```javascript
-var compute = can.compute(),
-    observable = compute.bind();
-
-observable.subscribe(function(x) { console.log("Value changed: ", x); });
-
-compute(1);
-
-observable.toCompute().bind("change", function() {
-  console.log("compute updated from property change.");
-});
-
-compute(2);
-
-```
-
-# Documentation
-
-For the most part, `can.rx` is a straightforward implementation of the
-`can.eventstream` interface.
-
-`can.rx` also extends `Rx.Observable.prototype` with a few utility methods
-that directly wrap `can.eventstream` functions, documented below.
-
-### `Rx.Observable#toCompute([compute=can.compute()])`
-
-Wraps `can.bindComputeFromStream`.
-
-`stream.toCompute(compute)` is the same as `can.bindComputeFromStream(stream,
-compute);`
-
-### `Rx.Observable#toMap([map=new can.Map()])`
-
-Wraps `can.bindMapFromStream`.
-
-`stream.toMap(compute)` is the same as `can.bindMapFromStream(stream,
-compute);`
-
-### `Rx.Observable#toList([list=new can.List()])`
-
-Wraps `can.bindListFromStream`.
-
-`stream.toList(compute)` is the same as `can.bindListFromStream(stream,
-compute);`
